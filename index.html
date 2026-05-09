@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan jQuery - Semester 2</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="src/style.css">
+</head>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">Semester 2 · Pemrograman Web · Farkhan Abdilah</span>
+  <h1>Latihan <span>jQuery</span><br>Hide/Show → Chaining</h1>
+  <p>Satu halaman, semua materi w3Schools dari Hide/Show sampai Chaining.</p>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#f5c51820;color:var(--accent)">01</div>
+  <h2>Hide / Show</h2>
+  <span class="tag">.hide() .show() .toggle()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Sembunyiin & tampilkan konten</div>
+  <div class="btn-group">
+    <button class="btn btn-dark" id="btn-hide">Sembunyikan</button>
+    <button class="btn btn-yellow" id="btn-show">Tampilkan</button>
+    <button class="btn btn-orange" id="btn-toggle">Toggle</button>
+  </div>
+  <div id="kotak-hide" class="demo-box">
+    Halo! Aku bisa hilang dan muncul lagi!
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Hide/Show dengan speed parameter</div>
+  <div class="btn-group">
+    <button class="btn btn-dark" onclick="$('#kartu-animasi').hide('slow')">Slow Hide</button>
+    <button class="btn btn-yellow" onclick="$('#kartu-animasi').show('slow')">Slow Show</button>
+    <button class="btn btn-teal" onclick="$('#kartu-animasi').toggle('fast')">Fast Toggle</button>
+  </div>
+  <div id="kartu-animasi">
+    <span class="emoji">Singa</span>
+    <strong>Singa ini bisa menghilang!</strong><br>
+    <small style="color:var(--muted)">Coba klik tombol di atas</small>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#ff6b3520;color:var(--accent2)">02</div>
+  <h2>Fade</h2>
+  <span class="tag">.fadeIn() .fadeOut() .fadeToggle() .fadeTo()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Fade tiga kotak warna</div>
+  <div class="btn-group">
+    <button class="btn btn-dark" id="btn-fadeout">Fade Out</button>
+    <button class="btn btn-orange" id="btn-fadein">Fade In</button>
+    <button class="btn btn-yellow" id="btn-fadetoggle">🔁 Toggle</button>
+    <button class="btn btn-teal" id="btn-fadeto">🌙 Fade 30%</button>
+  </div>
+  <div class="fade-boxes">
+    <div class="fade-box" id="fb1">KUNING</div>
+    <div class="fade-box" id="fb2">ORANYE</div>
+    <div class="fade-box" id="fb3">TEAL</div>
+  </div>
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#4ecdc420;color:var(--accent3)">03</div>
+  <h2>Slide</h2>
+  <span class="tag">.slideDown() .slideUp() .slideToggle()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Konten accordion sederhana</div>
+  <div class="btn-group">
+    <button class="btn btn-teal" id="btn-slidedown">Slide Down</button>
+    <button class="btn btn-dark" id="btn-slideup">Slide Up</button>
+    <button class="btn btn-yellow" id="btn-slidetoggle">Slide Toggle</button>
+  </div>
+  <div id="panel-slide" class="slide-panel" style="display:none">
+    <p>🎓 <strong>Tips Belajar jQuery:</strong></p>
+    <p>jQuery itu kayak shortcut dari JavaScript biasa. Kalau di JS kamu nulis <code>document.getElementById("x")</code>, di jQuery tinggal <code>$("#x")</code>. Lebih pendek, lebih enak!</p>
+    <p>Materi ini dari w3Schools: <em>Hide/Show → Fade → Slide → Animate → Stop → Callback → Chaining</em>. Pelan-pelan pasti bisa!</p>
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#f5c51820;color:var(--accent)">04</div>
+  <h2>Animate</h2>
+  <span class="tag">.animate()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Gerak kotak pakai jQuery animate</div>
+  <div class="btn-group">
+    <button class="btn btn-yellow" id="btn-gerak-kanan">➡️ Geser Kanan</button>
+    <button class="btn btn-dark"   id="btn-gerak-kiri">⬅️ Balik Kiri</button>
+    <button class="btn btn-orange" id="btn-gerak-besar">🔺 Perbesar</button>
+    <button class="btn btn-teal"   id="btn-gerak-reset">Reset</button>
+  </div>
+  <div style="height:100px; display:flex; align-items:center;">
+    <div id="kotak-gerak">Kotak</div>
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#ff6b3520;color:var(--accent2)">05</div>
+  <h2>Stop</h2>
+  <span class="tag">.stop()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Hentikan animasi yang lagi jalan</div>
+  <div class="btn-group">
+    <button class="btn btn-orange" id="btn-start-anim">Mulai Animasi</button>
+    <button class="btn btn-dark"   id="btn-stop-anim">Stop!</button>
+  </div>
+  <div id="stop-box" style="background:var(--accent2);height:8px;border-radius:4px;width:0%;"></div>
+  <p style="margin-top:12px; color:var(--muted); font-size:14px;">Klik Stop di tengah-tengah untuk menghentikan loading bar.</p>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#4ecdc420;color:var(--accent3)">06</div>
+  <h2>Callback</h2>
+  <span class="tag">function() setelah animasi selesai</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Jalankan kode SETELAH animasi beres</div>
+  <div class="btn-group">
+    <button class="btn btn-teal" id="btn-callback">Jalankan + Callback</button>
+  </div>
+  <div id="status-callback">
+    <div class="dot" id="dot-status"></div>
+    <span id="teks-status">Klik tombol untuk mulai animasi...</span>
+  </div>
+  <div id="kotak-cb" class="demo-box yellow-box" style="margin-top:16px">
+    Aku akan fade out, lalu callback aktif!
+  </div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#f5c51820;color:var(--accent)">07</div>
+  <h2>CSS Method</h2>
+  <span class="tag">.css()</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Ubah style langsung lewat jQuery</div>
+  <div class="btn-group">
+    <button class="btn btn-yellow" onclick="$('#teks-style').css({'color':'#f5c518','font-size':'28px','font-weight':'bold'})">Gaya Kuning</button>
+    <button class="btn btn-orange" onclick="$('#teks-style').css({'color':'#ff6b35','font-size':'14px','letter-spacing':'4px'})">Gaya Oranye</button>
+    <button class="btn btn-teal"   onclick="$('#teks-style').css({'color':'#4ecdc4','font-size':'22px','text-transform':'uppercase'})">Gaya Teal</button>
+    <button class="btn btn-dark"   onclick="$('#teks-style').css({'color':'#f0f0f0','font-size':'20px','font-weight':'normal','letter-spacing':'normal','text-transform':'none'})">Reset</button>
+  </div>
+  <div id="teks-style">Ubah tampilan teks ini dengan .css()</div>
+</div>
+
+<div class="section-label">
+  <div class="num" style="background:#ff6b3520;color:var(--accent2)">08</div>
+  <h2>Chaining</h2>
+  <span class="tag">Rangkai banyak method dalam satu baris</span>
+</div>
+
+<div class="card">
+  <div class="card-title">Jalankan banyak efek sekaligus</div>
+  <div class="btn-group">
+    <button class="btn btn-orange" id="btn-chain1">Chain 1: Fade+Slide</button>
+    <button class="btn btn-yellow" id="btn-chain2">Chain 2: CSS+Animate</button>
+    <button class="btn btn-teal"   id="btn-chain3">Chain 3: Full Combo</button>
+    <button class="btn btn-dark"   id="btn-chain-reset">Reset</button>
+  </div>
+  <div id="rantai-box">🔗</div>
+</div>
+
+<div class="footer">
+  Latihan jQuery | Semester 2 | Farkhan Abdilah
+</div>
+
+
+<script src="src/script.js"></script>
+</body>
+</html>
